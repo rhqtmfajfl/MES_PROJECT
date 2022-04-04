@@ -141,7 +141,7 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
+        {/* <TableCell padding="checkbox"> */}
           {/* <Checkbox
             color="primary"
             indeterminate={numSelected > 0 && numSelected < rowCount}
@@ -151,26 +151,26 @@ function EnhancedTableHead(props) {
               'aria-label': 'select all desserts',
             }}
           /> */}
-        </TableCell>
+        {/* </TableCell> */}
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
-            sortDirection={orderBy === headCell.id ? order : false}
+            align={'center'}
+            // padding={headCell.disablePadding ? 'none' : 'normal'}
+            // sortDirection={orderBy === headCell.id ? order : false}
           >
-            <TableSortLabel
+            {/* <TableSortLabel
               active={orderBy === headCell.id}
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
-            >
+            > */}
               {headCell.label}
-              {orderBy === headCell.id ? (
+              {/* {orderBy === headCell.id ? (
                 <Box component="span" sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </Box>
               ) : null}
-            </TableSortLabel>
+            </TableSortLabel> */}
           </TableCell>
         ))}
       </TableRow>
@@ -248,25 +248,7 @@ export default function EnhancedTable() {
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
-    let newSelected = [];
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1));
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1));
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
-      );
-    }
-
-    setSelected(newSelected);
-  };
+  // co0
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -292,6 +274,7 @@ export default function EnhancedTable() {
       
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
+        
         <FindBox />
 
         <TableContainer>
@@ -337,14 +320,14 @@ export default function EnhancedTable() {
                           }}
                         />
                       </TableCell> */}
-                      <TableCell
+                      {/* <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
                         padding="none"
                       >
                        
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell align="right">{row.name}</TableCell>
                       <TableCell align="right">{row.calories}</TableCell>
                       <TableCell align="right">{row.fat}</TableCell>

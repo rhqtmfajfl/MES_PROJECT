@@ -1,0 +1,39 @@
+[
+    {
+      "id": "name",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "순번"
+    },
+    {
+      "id": "calories",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "M/C"
+    },
+    {
+      "id": "fat",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "작업지시시각"
+    },
+    {
+      "id": "carbs",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "재료번호"
+    },
+    {
+      "id": "protein",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "중량"
+    },
+    {
+      "id": "date",
+      "numeric": true,
+      "disablePadding": false,
+      "label": "기한일"
+    }
+    
+]
